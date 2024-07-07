@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegisterCourseFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="#85ADD8E6"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Register Course"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="35dp"
+            android:layout_marginTop="15dp"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:text="Enter your name"/>
+
+        <EditText
+            android:id="@+id/rc_username"
+            android:layout_marginTop="3dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edittext_background"
+            android:layout_marginHorizontal="30dp"
+            android:hint="your name"
+            android:paddingVertical="7dp"
+            android:textSize="16sp"
+            android:paddingHorizontal="20dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="35dp"
+            android:layout_marginTop="10dp"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:text="Enter your email"/>
+
+        <EditText
+            android:id="@+id/rc_email"
+            android:layout_marginTop="3dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edittext_background"
+            android:layout_marginHorizontal="30dp"
+            android:hint="your email"
+            android:paddingVertical="7dp"
+            android:paddingHorizontal="20dp"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="35dp"
+            android:layout_marginTop="10dp"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:text="Enter your Phone no."/>
+
+        <EditText
+            android:id="@+id/rc_phone_no"
+            android:layout_marginTop="3dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edittext_background"
+            android:layout_marginHorizontal="30dp"
+            android:hint="your phone no."
+            android:paddingVertical="7dp"
+            android:textSize="16sp"
+            android:paddingHorizontal="20dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="35dp"
+            android:layout_marginTop="10dp"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:text="Enter your Address"/>
+
+        <EditText
+            android:id="@+id/rc_address"
+            android:layout_marginTop="3dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edittext_background"
+            android:layout_marginHorizontal="30dp"
+            android:hint="your address"
+            android:paddingVertical="7dp"
+            android:textSize="16sp"
+            android:paddingHorizontal="20dp"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="35dp"
+            android:layout_marginTop="10dp"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:text="Enter your Collge name"/>
+
+        <EditText
+            android:id="@+id/rc_collge_name"
+            android:layout_marginTop="3dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edittext_background"
+            android:layout_marginHorizontal="30dp"
+            android:hint="your college name"
+            android:paddingVertical="7dp"
+            android:textSize="16sp"
+            android:paddingHorizontal="20dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="35dp"
+            android:layout_marginTop="10dp"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:text="Choose your branch"/>
+
+        <EditText
+            android:id="@+id/rc_branch"
+            android:layout_marginTop="3dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edittext_background"
+            android:layout_marginHorizontal="30dp"
+            android:hint="your branch"
+            android:textSize="16sp"
+            android:paddingVertical="7dp"
+            android:paddingHorizontal="20dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="35dp"
+            android:layout_marginTop="10dp"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:text="Enter your year of Graduation"/>
+
+        <EditText
+            android:id="@+id/rc_yearOfGraduation"
+            android:layout_marginTop="3dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edittext_background"
+            android:layout_marginHorizontal="30dp"
+            android:hint="Your year of graduation"
+            android:paddingVertical="7dp"
+            android:textSize="16sp"
+            android:paddingHorizontal="20dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="35dp"
+            android:layout_marginTop="10dp"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:text="Choose course"/>
+
+        <EditText
+            android:id="@+id/rc_coursename"
+            android:layout_marginTop="3dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edittext_background"
+            android:layout_marginHorizontal="30dp"
+            android:hint="Choose course"
+            android:paddingVertical="7dp"
+            android:textSize="16sp"
+            android:paddingHorizontal="20dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="35dp"
+                    android:layout_marginTop="10dp"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:text="Start Date"/>
+
+                <EditText
+                    android:id="@+id/rc_startdate"
+                    android:layout_marginTop="3dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edittext_background"
+                    android:layout_marginHorizontal="30dp"
+                    android:hint="Start Date"
+                    android:paddingVertical="7dp"
+                    android:textSize="16sp"
+                    android:paddingHorizontal="20dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="35dp"
+                android:layout_marginTop="10dp"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:text="End date"/>
+
+            <EditText
+                android:id="@+id/rc_enddate"
+                android:layout_marginTop="3dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edittext_background"
+                android:layout_marginHorizontal="30dp"
+                android:hint="End Date"
+                android:paddingVertical="7dp"
+                android:textSize="16sp"
+                android:paddingHorizontal="20dp"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="35dp"
+            android:layout_marginTop="10dp"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:text="Choose Mode of Trainning"/>
+
+        <RadioGroup
+            android:id="@+id/radioModeOfTraining"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30sp"
+            android:orientation="horizontal"
+            >
+                <RadioButton
+                    android:id="@+id/radioButton1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Online"
+                    android:layout_weight="1"/>
+
+                <RadioButton
+                    android:id="@+id/radioButton2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Offline"
+                    android:layout_weight="1"/>
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/payment_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Proceed to pay"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="25dp"
+            android:backgroundTint="#0074D9"/>
+    </LinearLayout>
+
+    </ScrollView>
+
+</FrameLayout>

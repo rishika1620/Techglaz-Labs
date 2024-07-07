@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ContactFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/contactUs_tv1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Contact Us"
+            android:textSize="20sp"
+            android:layout_margin="10dp"
+            android:textStyle="bold"
+            android:padding="3dp"
+            />
+
+        <TextView
+            android:id="@+id/contactUs_tv2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="3dp"
+            android:text="@string/contactUs_string1"
+            android:textSize="15sp"
+            android:layout_marginHorizontal="10dp"
+            android:layout_below="@id/contactUs_tv1"/>
+
+        <LinearLayout
+            android:id="@+id/contactUs_ll1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/contactUs_tv2"
+            android:layout_margin="10dp"
+            android:weightSum="2"
+            android:orientation="vertical"
+            >
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:elevation="5dp"
+                app:cardCornerRadius="10dp"
+                android:layout_margin="10dp">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="150dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:background="@drawable/image_with_rounded_background"
+                    >
+                    <ImageView
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        android:src="@drawable/call"
+                        android:layout_marginTop="5dp"
+                        android:layout_gravity="center"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textSize="15sp"
+                        android:layout_marginTop="10dp"
+                        android:textAlignment="center"
+                        android:text="@string/contactUs_phone"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                app:cardCornerRadius="10dp"
+                android:elevation="5dp"
+                android:layout_margin="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_weight="1"
+                android:padding="5dp"
+                android:orientation="vertical"
+                android:background="@drawable/image_with_rounded_background"
+                >
+                <ImageView
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:layout_marginTop="5dp"
+                    android:src="@drawable/email"
+                    android:layout_gravity="center"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textSize="15sp"
+                    android:layout_marginTop="10dp"
+                    android:textAlignment="center"
+                    android:text="@string/contactUs_email"/>
+
+            </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/divider_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/divider"
+            android:layout_marginHorizontal="15dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/contactUs_ll1"/>
+        <TextView
+            android:id="@+id/contactUs_tv3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/divider_1"
+            android:text="Address"
+            android:textSize="20sp"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="10dp"
+            android:textStyle="bold"
+            android:padding="3dp"
+            />
+        
+        <LinearLayout
+            android:id="@+id/contactUs_ll2"
+            android:layout_below="@id/contactUs_tv3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="5dp"
+            android:weightSum="2">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="@string/contactUs_address"
+                    android:textSize="15sp"
+                    />
+
+                <ImageView
+                    android:id="@+id/contactUs_location"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_gravity="center"
+                    android:paddingHorizontal="10dp"
+                    android:paddingVertical="5dp"
+                    android:src="@drawable/location"/>
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/divider_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/divider"
+            android:layout_marginHorizontal="15dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/contactUs_ll2"/>
+
+        <TextView
+            android:id="@+id/contactUs_tv4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/contactUs_ll2"
+            android:text="Send your Queries"
+            android:textSize="20sp"
+            android:layout_margin="10dp"
+            android:textStyle="bold"
+            android:padding="3dp"
+            />
+
+        <LinearLayout
+            android:id="@+id/contactUs_ll3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/contactUs_tv4"
+            android:orientation="vertical">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:padding="10dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="10dp"
+                android:hint="Name"
+                android:inputType="text"
+                android:background="@drawable/transparent_background"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:padding="10dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginBottom="10dp"
+                android:hint="Email"
+                android:inputType="textEmailAddress"
+                android:background="@drawable/transparent_background"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginBottom="10dp"
+                android:hint="Your message"
+                android:singleLine="false"
+                android:maxLines="50"
+                android:gravity="top"
+                android:inputType="textMultiLine"
+                android:background="@drawable/transparent_background"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Send"
+                android:layout_marginBottom="10dp"
+                android:layout_gravity="center"
+                android:backgroundTint="#C4095EA2"
+                android:elevation="5dp"
+                android:shadowColor="#A09B9B"
+                android:shadowRadius="5.0"/>
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/divider_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/divider"
+            android:layout_marginHorizontal="15dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/contactUs_ll3"/>
+
+
+        <TextView
+            android:id="@+id/contactUs_tv5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Connect us on Social Media"
+            android:layout_below="@id/contactUs_ll3"
+            android:textSize="15sp"
+            android:layout_margin="10dp"
+            android:textStyle="bold"
+            android:padding="3dp"
+            />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:padding="10dp"
+            android:weightSum="4"
+            android:layout_below="@id/contactUs_tv5"
+            android:layout_margin="10dp"
+            android:background="#6D095EA2"
+            android:elevation="5dp"
+            >
+
+
+            <ImageView
+                android:id="@+id/contact_linkedIN"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:longClickable="false"
+                android:src="@drawable/linkedin" />
+
+            <ImageView
+                android:id="@+id/contact_instagram"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/instagram"
+                android:layout_weight="1"
+                />
+            <ImageView
+                android:id="@+id/contact_facebook"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/facebook"
+                android:layout_weight="1"
+                />
+            <ImageView
+                android:id="@+id/contact_website"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/website"
+                android:layout_weight="1"
+                />
+        </LinearLayout>
+
+    </RelativeLayout>
+    </ScrollView>
+
+</FrameLayout>

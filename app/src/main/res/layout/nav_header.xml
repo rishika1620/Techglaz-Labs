@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="250dp"
+    android:padding="20dp"
+    android:background="#8F095EA2"
+    android:gravity="bottom"
+    >
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/techglaz_logo"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Techglaz Labs!"
+        android:fontFamily="sans-serif-black"
+        android:textSize="24sp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="let’s create your own future"
+        android:textSize="16sp"
+        android:fontFamily="sans-serif-medium"/>
+
+
+
+
+
+</LinearLayout>

@@ -1,0 +1,122 @@
+<resources>
+    <string name="app_name"><b>TechGlaz</b></string>
+
+    <string name="nav_open"> Open Navigation drawer</string>
+    <string name="nav_close"> Close Navigation drawer</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="default_web_client_id">"329781533743-f5a6cj2sn460nhl11mse273hlhm3fd5n.apps.googleusercontent.com"</string>
+
+    <string name="aurdino_title">Arduino (Price-2000 INR)</string>
+    <string name="iot_title">IoT(Price-3000 INR)</string>
+    <string name="robotics_title">Autonomous and Wireless Robotics (Price-2500INR)</string>
+    <string name="embeddedSystem_title">Embedded System (Price-3500 INR)</string>
+    <string name="java_title">Java (Price-3000 INR)</string>
+    <string name="webDevelopment_title">Web Development (Price-4000 INR)</string>
+    <string name="appDevelopment_title">App Development (Price-4000 INR)</string>
+
+
+    <string name="aurdino_des">From Basics to Mastery: Unlock the Power of Arduino. This comprehensive course guides you through practical applications of programming concepts in embedded systems, enabling you to create 10+ projects with the potential for over 100 more..</string>
+    <string name="iot_des">Unleash the Potential of IoT with ESP32: Master Wireless Communication, Sensor Integration, and Cloud Connectivity for Cutting-Edge IoT Solutions.</string>
+    <string name="robotics_des">Embark on a Journey into Autonomous and Wireless Robotics: Learn to Build, Program, and Control Robots with Cutting-Edge Technology. Our Course Equips You with the Skills to Create Robots that Navigate and Interact with the World Independently.</string>
+    <string name="embeddedSystem_des">Discover the World of Embedded Systems with Arduino: Dive into the Core of Electronics and Programming. Learn to Design and Implement Smart, Efficient Systems for Real-World Applications.</string>
+    <string name="java_des">Unlock the Power of Java with Our Comprehensive Courses: From Fundamentals to Advanced Concepts, Master the Language Behind Web Development, Mobile Apps, and Enterprise Software Solutions.</string>
+    <string name="webDevelopment_des">Empower Your Web Development Journey with HTML, CSS, and JavaScript: Learn to Create Stunning Websites and Dynamic Web Applications. Our Courses Cover Everything from Frontend Design to Backend.</string>
+    <string name="androidDevelopment_des">Embark on Your App Development Journey: Learn to Build Engaging and Functional Applications for Mobile and Web Platforms. Our Courses Cover App Design, Development, and Deployment Across iOS, Android, and Web Environments.</string>
+
+    <string name="about_string1">Techglaz is a leading provider of innovative and practical education solutions in the
+        fields of Robotics, Arduino, and IoT. Our mission is to transform traditional learning methods by providing hands-on
+        training that empowers students to become skilled engineers and problem solvers.</string>
+    <string name="about_string2">Founded by Nishant Kumar, an accomplished robotics expert and educator,
+        Techglaz is committed to providing high-quality education that inspires creativity and innovation.
+        With a team of experienced technologists, we aim to bridge the gap between theoretical knowledge and practical application,
+        helping students develop real-world skills that are in demand in today’s job market.</string>
+    <string name="about_string3">At Techglaz, we believe that every learner has the potential to become a knowledge wizard.
+        That’s why we offer a range of workshops and training programs designed to cater to students of all ages and skill levels.
+        Whether you’re a beginner looking to explore the world of robotics or an experienced engineer seeking to enhance your skills,
+        Techglaz has something for you.</string>
+    <string name="about_string4">Join us on a journey of discovery and learning. Let’s unlock your potential together at Techglaz.</string>
+    <string name="about_string5">“Founder and CEO of Techglaz Lab Pvt. Ltd., is a distinguished leader with a strong track record.
+        Recognized by the Japan Science and Technology Agency (JST) and invited by KIO University, Japan, he has excelled in robotics,
+        winning gold at the World Skill Day competition and topping the Inspire Awards and many State and National Competition.
+        Nishant’s commitment to innovation is evident through his participation in the Japan Sakura Science Programme .”</string>
+    <string name="about_string6">We offer advanced training in robotics and embedded systems to renowned institutions such as
+        IIT Bombay and NIT Arunachal. By equipping students with future-focused skills, we empower them to thrive in emerging
+        technologies and shape the future landscape of innovation.</string>
+    <string name="about_string7">Empowering Learners, Inspiring Innovators:\n Techglaz Labs .</string>
+
+
+    <string name="contactUs_string1">Contact us for High Quality Workshop and Training</string>
+    <string name="contactUs_address"><b>Village:</b> Ank Villa,\n<b>City:</b> Sabour,\n<b>District:</b> Bhagalpur,\n<b>State:</b> Bihar,\n<b>Pincode:</b> 813210</string>
+    <string name="contactUs_phone">Call us at : \n<a href="+91 6204696995"><b>+91 6204696995</b></a></string>
+    <string name="contactUs_email">Mail us at : \n<a href="techglazlabspvtltd@gmail.com"><b> techglazlabspvtltd@gmail.com</b></a></string>
+
+    <string name="privacy_policy">
+
+    <p>The Privacy Policy explains how we collect, use and disclose your information/data including personal information when you visit our website<strong>techglaz.com</strong></p>
+    <p>\n\nThe following privacy terms and conditions establish a binding contract as per the provisions and rules under the Information Technology Act (IT Act) of 2000,
+        by and between the operator of the website, being Techglaz Labs Labs Pvt Ltd, a company duly incorporated under the provisions of the Companies Act,
+        1956 (in the future referred to as ‘Company’) and You.</p>
+    <p>\n\nWhen this privacy policy mentions “<b>Techglaz Labs Pvt Ltd</b>(techglaz.com), “we”, “our” or “us”,
+        it refers to Techglaz Labs Pvt Ltd, the company that is responsible for your information under this privacy policy.</p>
+    <p>\n\nIn simplified form (greater detail is below), our policy can be summarized as follows:</p>
+    \n\n(i) We may collect some information about you, as described in this policy, but you have some choices about how much you share about yourself.
+
+        \n\n(ii) We do not knowingly collect information from children under 13 years of age on the website, in person, by mail, or by any other means.
+
+        \n\n(iii) We will not sell your personal information but may share such information with our vendors and our clients in connection with providing the services.
+
+        \n\n(iv) If we use a third party to assist us, they will be bound to protect your information.
+
+        \n\n(v) We may collect, use and share aggregated, anonymous information about our users.
+    <p>\n\nPlease read the entire privacy policy carefully on this page. Whenever you access or use our website, it signifies that you have given your consent to us for
+        the collection and use of your information.</p>
+    <p>\n\nTo access and use the website as well as services, you must agree to our privacy terms and terms and conditions posted on the website. Users and organizations
+        with permission to use our service are considered ‘Registered Users.’ You may view parts of the website even if you are not a registered user of any of our
+        services. This privacy policy applies to the company’s collection, use as well as disclosure of Personal Information (as defined below) from registered users of
+        the website, as well as from users who just visit the site.</p>
+    <p>\n\nPlease note this privacy policy is subject to our terms  and conditions and can be changed or modified by us at any time without any prior notification.</p>
+    <p>\n\nFor this Privacy Policy, “personal information” means any information relating to an identified or identifiable individual.</p>
+    <p><b>\n\n1. What Information Do We Collect and Why?</b></p>
+    <p><b>\n\nInformation you provide while using our service</b></p>
+       \n\n(i) Personal Information: Information that is required to access our website, including ‘Personal Information’ means data that allows someone to either identify or contact you, including, your name, address, phone number, email ID, as well as any other general non-public information about you that is either associated with or linked to any of the preceding data.
+
+        \n\n(ii) Non-Personal Information: The information you provide through live chats as support: The services also include live chat support, and customer support, where you may send any questions to us regarding the services. When you speak to one of our representatives regarding any question, issue, and/or problem you may have, you will be asked to provide your contact information, and/or when you send us an email, and/or post a query with a summary of the problem and any other information that would be helpful to us in resolving the issue.
+        <p>\n\nOur Registered customers may also acquire a login ID and password to access the respective site for further use and information and those records may be linked with each registered user’s account profile within the company system.</p>
+        <p>\n\nWe also collect and maintain records of information that you voluntarily offer to us on various occasions while participating in a competition and/or collaborating with us including your personal information, like age, birthday, gender, or other demographic data. If you enter into any contest, offer, or promotion on our site, we will gather the information you offer to participate in the contest, offer, or promotion.</p>
+        <p><b>\n\nWhen you buy something from our website, as part of the buying and selling process</b></p>
+        \n\n(i) IP Address: When you browse our website, we automatically collect your computer’s internet protocol (IP) address to provide us with the information that helps us learn about your browser and operating system and serve you a better site interfacing experience.
+
+            \n\n(ii) Email marketing (if applicable): With your permission, we may send you emails about our store, new products, and other updates.
+
+            \n\n(iii) Comments: When users leave comments on our website or any other social media platform, we gather their account handles, and details inclosing their names, and/or any other information provided by the user.
+
+            \n\n(iv) Testimonials: Users may provide testimonials with their permission and/or reviews about our products and services that will be used on our website kurious.ai along with the name of the organization/person providing the information for promotional purposes.
+        <p><b>\n\n2. Use and Disclosure of Gathered Information</b></p>
+        <p><b>\n\nThe automatically-collected information from your use of our website, social media platforms, and software services.</b></p>
+        <p>\n\nThe Company uses information gathered from the website and service in several ways, as outlined in this privacy policy. We utilize both personal information as well as non-personal Information while surveying ways of upgrading the site and the help. As further depicted underneath, in restricted conditions, we might reveal assembled data, including the Personal Information, to explicit outsiders regarding offering types of assistance or as legally necessary. We won’t involve or uncover accumulated data in manners, not the same as what is depicted in this approach except if generally legally necessary.</p>
+        <p>\n\nAs an essential part of providing services, we may disclose data gathered from you as described in this privacy policy.</p>
+        <p><b>\n\n3. Information collection upon transactions</b></p>
+        <p><b>\n\nPayment Transaction Related Information:</b>Kurious may collect information related to your payment transactions through different services we offer, counting the item name, type of installment instrument utilized, date and time, installment sum, charge sum, Mastercard number, Visa termination date, cardholder name (whenever gave), fundamental data like the main name, last name, telephone, address, country, state, city, postal code, and different subtleties associated with exchanges.</p>
+        <p><b>\n\nThird-Party Widgets:</b>A portion of our Services contains gadgets and web-based entertainment highlights, for example, a Facebook button. You are the main individual who chooses if you might want to squeeze this button and offer your information. These gadgets and elements gather your IP address, and the data about the page you are visiting during your utilization of the Services and may set a treat to empower the component to appropriately work. Gadgets and Social Media highlights may likewise be facilitated by a third gathering. Your cooperation with these highlights is administered by the organization giving them. Marketing Reason</p>
+        <p>\n\nIf we ask for your personal information for a secondary reason, like marketing, we will either ask you directly for your expressed consent or provide you with an opportunity to say “no” to it.</p>
+        <p><b>\n\n4. How we utilize the data we gather about you</b></p>
+        <p>\n\nWe use, store and process the data we gather about you, to give, keep up with, and foster our administrations. This empowers us to make and keep a more secure and confided-in environment for both the parties – You and Us and consent to our legitimate commitments. We process this data, given our genuine interest in working on our administrations, and where it is essential and expected for the satisfactory presentation of the agreement with you.</p>
+        <p><b>\n\nTo give, improve and foster our administrations</b></p>
+        <p>\n\nWork, safeguard and streamline administrations and experience</p>
+        <p>\n\nEmpower us to access and utilize administrations</p>
+        <p><b>\n\nGive client administrations:</b>To determine specialized issues, answer inquiries or questions, and further develop administrations.</p>
+        <p>\n\nAssuming you give us your contact data, we might handle the data for misrepresentation recognition and counteraction and to fill any need you approve at the hour of data assortment. We might get in touch with you about your record or criticism. We could likewise get in touch with you about this policy or our application terms of service.</p>
+        <p><b>\n\nTo make and keep a more secure and confided environment for both the parties</b></p>
+        <p>\n\nLead security examinations and chance appraisals</p>
+        <p>\n\nDistinguish and forestall any unsafe exercises like spam, misuse, security episodes, and so on.</p>
+        <p>\n\nImplement our agreements.</p>
+        <p>\n\nConsent to our lawful commitments.</p>
+        <p>\n\nTo give, customize, and work on our promoting and advertising.</p>
+        <p>\n\nSend you showcasing, publicizing, limited time messages, and other data given your advantage and inclinations and virtual entertainment promoting through online entertainment stages like Facebook, Google, and so forth.</p>
+        <p>\n\nCustomize and work on our publicizing.</p>
+    </string>
+
+
+</resources>
