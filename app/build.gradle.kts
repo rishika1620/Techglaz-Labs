@@ -44,7 +44,6 @@ android {
 }
 
 dependencies {
-
     implementation("androidx.appcompat:appcompat:1.7.0")
     implementation("com.google.android.material:material:1.12.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
@@ -58,9 +57,14 @@ dependencies {
     implementation ("com.razorpay:checkout:1.6.10")
     implementation ("com.itextpdf:itext7-core:7.2.3")
     implementation ("org.mongodb:mongodb-driver-sync:4.8.0")
+
+    //For sending mail
+    //implementation ("com.sun.mail:android-mail:1.6.7")
+    //implementation ("com.sun.mail:android-activation:1.6.7")
+
     testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test.ext:junit:1.2.0")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.6.0")
-    coreLibraryDesugaring ("com.android.tools:desugar_jdk_libs:2.0.3")
+    androidTestImplementation("androidx.test.ext:junit:1.2.1")
+    androidTestImplementation("androidx.test.espresso:espresso-core:3.6.1")
+    coreLibraryDesugaring ("com.android.tools:desugar_jdk_libs:2.0.4")
     implementation("androidx.multidex:multidex:2.0.1")
 }

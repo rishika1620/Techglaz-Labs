@@ -99,15 +99,26 @@ public class RegisterActivity extends AppCompatActivity {
         MongoDB_Database database = new MongoDB_Database(getApplicationContext());
         Log.d("Database", "Connecting database");
         database.setupDatabase();
-        User_Model userModel = new User_Model(username,email,phone,password,false);
-        database.signup(userModel, new MongoDB_Database.DBCallback() {
+
+        database.isAlreadyExists(email, new MongoDB_Database.DBCallback() {
             @Override
             public void onSuccess() {
-                login();
+                email_edt.setError("User Already Exists");
             }
 
             @Override
             public void onError(String errorMessage) {
+                User_Model userModel = new User_Model(username,email,phone,password,false);
+                database.signup(userModel, new MongoDB_Database.DBCallback() {
+                    @Override
+                    public void onSuccess() {
+                        login();
+                    }
+
+                    @Override
+                    public void onError(String errorMessage) {
+                    }
+                });
             }
         });
     }

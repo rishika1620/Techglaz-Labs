@@ -49,14 +49,14 @@
             android:backgroundTint="#C4095EA2"
             android:text="Verify"/>
 
-        <Button
+       <!-- <Button
             android:id="@+id/certificate_upload_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
             android:backgroundTint="#C4095EA2"
-            android:text="Upload Certificate"/>
+            android:text="Upload Certificate"/>-->
 
 
     </LinearLayout>

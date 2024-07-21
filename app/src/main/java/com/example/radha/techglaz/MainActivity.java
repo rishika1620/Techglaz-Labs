@@ -15,7 +15,9 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.Manifest;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
@@ -36,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
     ActivityResultLauncher<String[]> mPermissionResultLauncher;
     private boolean isReadPermisssionGranted = false;
     private  boolean isWritePermissionGranted = false;
+    private boolean ispostNotification = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,6 +66,9 @@ public class MainActivity extends AppCompatActivity {
                 if(o.get(Manifest.permission.WRITE_EXTERNAL_STORAGE) != null){
                     isReadPermisssionGranted = o.get(Manifest.permission.WRITE_EXTERNAL_STORAGE);
                 }
+                if(o.get(Manifest.permission.POST_NOTIFICATIONS) != null){
+                    ispostNotification = o.get(Manifest.permission.POST_NOTIFICATIONS);
+                }
             }
         });
 
@@ -79,28 +85,31 @@ public class MainActivity extends AppCompatActivity {
                 int id = item.getItemId();
                 if(id == R.id.nav_home){
                     loadFragment(new HmeFragment(),0);
-                    Toast.makeText(MainActivity.this, "Home selected", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(MainActivity.this, "Home selected", Toast.LENGTH_SHORT).show();
                 }
                 else if(id == R.id.nav_certificate){
                     loadFragment(new Certificate_verificationFragment(),0);
-                    Toast.makeText(MainActivity.this, "Certificate selected", Toast.LENGTH_SHORT).show();
+                   // Toast.makeText(MainActivity.this, "Certificate selected", Toast.LENGTH_SHORT).show();
                 }
                 else if(id == R.id.nav_contact_us){
                     loadFragment(new ContactFragment(),0);
-                    Toast.makeText(MainActivity.this, "Contact selected", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(MainActivity.this, "Contact selected", Toast.LENGTH_SHORT).show();
                 }
                 else if(id == R.id.nav_about){
                     loadFragment(new AboutFragment(),0);
-                    Toast.makeText(MainActivity.this, "About selected", Toast.LENGTH_SHORT).show();
+                   // Toast.makeText(MainActivity.this, "About selected", Toast.LENGTH_SHORT).show();
                 }
                 else if(id == R.id.nav_policy){
                     loadFragment(new PrivacyPolicyFragment(),0);
-                    Toast.makeText(MainActivity.this, "Privacy selected", Toast.LENGTH_SHORT).show();
+                   // Toast.makeText(MainActivity.this, "Privacy selected", Toast.LENGTH_SHORT).show();
                 }
                 else if(id == R.id.nav_logout){
                     MongoDB_Database database = new MongoDB_Database(getApplicationContext());
                     database.setupDatabase();
-                    database.logout("raj@gmail.com", new MongoDB_Database.isLoggedCallback() {
+
+                    SharedPreferences sharedPreferences = getSharedPreferences("LoginDetails",MODE_PRIVATE);
+                    String email = sharedPreferences.getString("email",null);
+                    database.logout(email, new MongoDB_Database.isLoggedCallback() {
                         @Override
                         public void onSuccess(Boolean isLogged) {
                             if(!isLogged){
@@ -124,6 +133,16 @@ public class MainActivity extends AppCompatActivity {
             }
 
         });
+
+        if (getIntent().hasExtra("pdfUri")) {
+            String pdfUriString = getIntent().getStringExtra("pdfUri");
+            Uri pdfUri = Uri.parse(pdfUriString);
+
+            OpenPDFFragment fragment = OpenPDFFragment.newInstance(pdfUri);
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.frame, fragment)
+                    .commit();
+        }
 
     }
 
@@ -153,7 +172,7 @@ public class MainActivity extends AppCompatActivity {
         Log.d("MainActivity","Inside requestPermission");
         isReadPermisssionGranted = ContextCompat.checkSelfPermission(this, Manifest.permission.READ_MEDIA_IMAGES) == PackageManager.PERMISSION_GRANTED;
         isWritePermissionGranted = ContextCompat.checkSelfPermission(this, android.Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED;
-
+        ispostNotification = ContextCompat.checkSelfPermission(this,Manifest.permission.POST_NOTIFICATIONS) == PackageManager.PERMISSION_GRANTED;
         List<String> permissionRequest = new ArrayList<String>();
 
         if(!isReadPermisssionGranted){
@@ -162,6 +181,10 @@ public class MainActivity extends AppCompatActivity {
 
         if(!isWritePermissionGranted){
             permissionRequest.add(Manifest.permission.WRITE_EXTERNAL_STORAGE);
+        }
+
+        if(!ispostNotification){
+            permissionRequest.add(Manifest.permission.POST_NOTIFICATIONS);
         }
 
         if(!permissionRequest.isEmpty()){

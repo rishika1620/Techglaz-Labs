@@ -2,7 +2,7 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".RegisterCourseFragment">
 
     <ScrollView
@@ -11,7 +11,7 @@
         android:scrollbars="none">
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
         android:background="#85ADD8E6"
         >
@@ -45,7 +45,8 @@
             android:hint="your name"
             android:paddingVertical="7dp"
             android:textSize="16sp"
-            android:paddingHorizontal="20dp"/>
+            android:paddingHorizontal="20dp"
+            android:inputType="text"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -66,7 +67,8 @@
             android:hint="your email"
             android:paddingVertical="7dp"
             android:paddingHorizontal="20dp"
-            android:textSize="16sp"/>
+            android:textSize="16sp"
+            android:inputType="textEmailAddress"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -87,7 +89,8 @@
             android:hint="your phone no."
             android:paddingVertical="7dp"
             android:textSize="16sp"
-            android:paddingHorizontal="20dp"/>
+            android:paddingHorizontal="20dp"
+            android:inputType="phone"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -107,8 +110,11 @@
             android:layout_marginHorizontal="30dp"
             android:hint="your address"
             android:paddingVertical="7dp"
+            android:inputType="textMultiLine"
+            android:maxEms="15"
             android:textSize="16sp"
-            android:paddingHorizontal="20dp"/>
+            android:paddingHorizontal="20dp"
+            />
 
 
         <TextView
@@ -151,7 +157,8 @@
             android:hint="your branch"
             android:textSize="16sp"
             android:paddingVertical="7dp"
-            android:paddingHorizontal="20dp"/>
+            android:paddingHorizontal="20dp"
+            android:inputType="text"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -172,6 +179,7 @@
             android:hint="Your year of graduation"
             android:paddingVertical="7dp"
             android:textSize="16sp"
+            android:inputType="datetime"
             android:paddingHorizontal="20dp"/>
 
         <TextView
@@ -193,23 +201,25 @@
             android:hint="Choose course"
             android:paddingVertical="7dp"
             android:textSize="16sp"
+            android:focusable="false"
             android:paddingHorizontal="20dp"/>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
+            android:layout_marginHorizontal="35dp"
             android:weightSum="2">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:layout_marginEnd="5dp"
                 android:orientation="vertical">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="35dp"
                     android:layout_marginTop="10dp"
                     android:textSize="13sp"
                     android:textStyle="bold"
@@ -221,10 +231,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/edittext_background"
-                    android:layout_marginHorizontal="30dp"
                     android:hint="Start Date"
                     android:paddingVertical="7dp"
+                    android:drawableRight="@drawable/baseline_arrow_drop_down_24"
                     android:textSize="16sp"
+                    android:inputType="date"
+                    android:focusable="false"
                     android:paddingHorizontal="20dp"/>
 
             </LinearLayout>
@@ -233,12 +245,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
+                android:layout_marginStart="5dp"
                 android:layout_weight="1">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="35dp"
                 android:layout_marginTop="10dp"
                 android:textSize="13sp"
                 android:textStyle="bold"
@@ -250,10 +262,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/edittext_background"
-                android:layout_marginHorizontal="30dp"
                 android:hint="End Date"
+                android:drawableRight="@drawable/baseline_arrow_drop_down_24"
                 android:paddingVertical="7dp"
                 android:textSize="16sp"
+                android:inputType="date"
+                android:focusable="false"
                 android:paddingHorizontal="20dp"/>
             </LinearLayout>
         </LinearLayout>

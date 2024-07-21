@@ -4,6 +4,7 @@ package com.example.radha.techglaz;
 import android.Manifest;
 import android.app.Dialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
@@ -59,17 +60,11 @@ import okhttp3.Response;
 public class LoginActivity extends AppCompatActivity {
 
     Button btn_login;
-    Button dBVerifyOTP;
-    Button dBCancel;
     TextView SignUp;
-    TextView set_number;
+    TextView forgotPassword;
 
     EditText id_edt;
     EditText password_edt;
-    EditText otp_1;
-    EditText otp_2;
-    EditText otp_3;
-    EditText otp_4;
 
     ImageView emailSignIn;
     ImageView linkedInSignIn;
@@ -77,7 +72,7 @@ public class LoginActivity extends AppCompatActivity {
     GoogleSignInOptions gso;
     GoogleSignInClient gsc;
 
-    Dialog dialog;
+    SharedPreferences sharedPreferences;
 
     private static final String CLIENT_ID_LinkedIn = "86c27xdtjk2d6j";
     private static final String CLIENT_SECRET_LinkedIn = "8BApFR79UURyUboM";
@@ -89,9 +84,6 @@ public class LoginActivity extends AppCompatActivity {
     private static final String CLIENT_ID_Github = "Ov23liVaO3k3KM28ebwW";
     private static  final String CLIENT_SECRET_Github= "99ca31a38ea32ef2d3ddaf4299fe19bb3e47cfbd";
     private static final String REDIRECT_URI_Github = "techglaz://callback";
-
-    Random random;
-    int otp;;
 
     String user_id,password;
 
@@ -115,8 +107,10 @@ public class LoginActivity extends AppCompatActivity {
         linkedInSignIn = findViewById(R.id.linkedin_login);
         githubSignIn = findViewById(R.id.github_login);
         password_edt = findViewById(R.id.login_password);
+        forgotPassword = findViewById(R.id.tv_forgot_password);
 
-        set_Dialog();
+        sharedPreferences = getSharedPreferences("LoginDetails",MODE_PRIVATE);
+
         btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -158,21 +152,35 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+        forgotPassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), ForgotPasswordActivity.class);
+                startActivity(intent);
+            }
+        });
+
 
     }
 
     public void login_db(){
         MongoDB_Database mongoDBDatabase = new MongoDB_Database(getApplicationContext());
         mongoDBDatabase.setupDatabase();
-        mongoDBDatabase.login(user_id, password, new MongoDB_Database.DBCallback() {
+
+       mongoDBDatabase.login(user_id, password, new MongoDB_Database.DBCallback() {
             @Override
             public void onSuccess() {
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putString("email",user_id);
+                editor.putString("password",password);
+                editor.apply();
                 openHome();
             }
 
             @Override
             public void onError(String errorMessage) {
-
+                Toast.makeText(getApplicationContext(),errorMessage,Toast.LENGTH_LONG).show();
+                id_edt.setError("Incorrect Username or password");
             }
         });
     }
@@ -189,10 +197,9 @@ public class LoginActivity extends AppCompatActivity {
         password = password_edt.getText().toString();
         if(validate_Phoneno(user_id)){
             return true;
-
         }
         else if(Patterns.EMAIL_ADDRESS.matcher(user_id).matches()){
-            send_otp_email();
+           // send_otp_email();
             return true;
         }
         else if(user_id.isEmpty()){
@@ -211,74 +218,11 @@ public class LoginActivity extends AppCompatActivity {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if(requestCode == 1000){
             if(grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
-                send_otp_phone();
+               // send_otp_phone();
             }else{
                 Toast.makeText(this,"Permission Denied",Toast.LENGTH_LONG).show();
             }
         }
-    }
-
-    private void send_otp_phone(){
-        try{
-            SmsManager smsManager = SmsManager.getDefault();
-            random = new Random();
-            otp  = 1000 + random.nextInt(9000);
-            String sms = "OTP is : " + Integer.toString(otp);
-            smsManager.sendTextMessage(user_id,null,sms,null,null);
-            Toast.makeText(getApplicationContext(), "SMS Sent to " + user_id, Toast.LENGTH_LONG).show();
-        }catch (Exception e){
-            Toast.makeText(getApplicationContext(), "SMS failed, please try again later!", Toast.LENGTH_LONG).show();
-            e.printStackTrace();
-        }
-    }
-
-    private void send_otp_email(){
-        random = new Random();
-        otp  = 1000 + random.nextInt(9000);
-        Intent intent = new Intent(Intent.ACTION_SENDTO);
-        intent.setData(Uri.parse("mailto: " + user_id)); // Only email apps should handle this
-        intent.putExtra(Intent.EXTRA_EMAIL, new String[]{"ruparanjan612@gmail.com"});
-        intent.putExtra(Intent.EXTRA_SUBJECT, "OTP Verification");
-        intent.putExtra(Intent.EXTRA_TEXT, "Your OTP verification code is: " + Integer.toString(otp));
-
-        if (intent.resolveActivity(getPackageManager()) != null) {
-            Log.d("mail veify","Inside resolve");
-            startActivity(intent);
-        }
-    }
-
-    private void set_Dialog(){
-        dialog = new Dialog(LoginActivity.this);
-        dialog.setContentView(R.layout.custom_dialogue_send_otp);
-        dialog.getWindow().setLayout(ViewGroup.LayoutParams.WRAP_CONTENT,ViewGroup.LayoutParams.WRAP_CONTENT);
-        dialog.getWindow().setBackgroundDrawable(getDrawable(R.drawable.dialog_background));
-        dialog.setCancelable(false);
-
-        dBVerifyOTP = dialog.findViewById(R.id.verify_otp);
-        dBCancel = dialog.findViewById(R.id.send_otp_cancel);
-        otp_1 = dialog.findViewById(R.id.send_otp_et1);
-        otp_2 = dialog.findViewById(R.id.send_otp_et2);
-        otp_3 = dialog.findViewById(R.id.send_otp_et3);
-        otp_4 = dialog.findViewById(R.id.send_otp_et4);
-        set_number = dialog.findViewById(R.id.otp_tv_number);
-
-        dBCancel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dialog.dismiss();
-            }
-        });
-
-        dBVerifyOTP.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String otp_received = otp_1.getText().toString() + otp_2.getText().toString() + otp_3.getText().toString() + otp_4.getText().toString();
-                String otp_send = Integer.toString(otp);
-                if(otp_send.equals(otp_received)){
-                    openHome();
-                }
-            }
-        });
     }
 
     private void showError(EditText view, String error) {
@@ -322,8 +266,39 @@ public class LoginActivity extends AppCompatActivity {
             GoogleSignInAccount account = completedTask.getResult(ApiException.class);
 
             Toast.makeText(this,"Login sucessfull " + account.getDisplayName(),Toast.LENGTH_LONG).show();
-            Log.d("Error","Login Successfull " + account);
-            openHome();
+            Log.d("Error","Login Successfull " + account.getEmail());
+
+            MongoDB_Database database = new MongoDB_Database(getApplicationContext());
+            database.setupDatabase();
+
+            database.isAlreadyExists(account.getEmail(), new MongoDB_Database.DBCallback() {
+                @Override
+                public void onSuccess() {
+                    user_id = account.getEmail();
+                    password = account.getId();
+                    login_db();
+                }
+
+                @Override
+                public void onError(String errorMessage) {
+                    User_Model userModel = new User_Model(account.getDisplayName(), account.getEmail(), "",account.getId(),false);
+
+                    database.signup(userModel, new MongoDB_Database.DBCallback() {
+                        @Override
+                        public void onSuccess() {
+                            user_id = account.getEmail();
+                            password = account.getId();
+                            login_db();
+                        }
+
+                        @Override
+                        public void onError(String errorMessage) {
+                            Toast.makeText(getApplicationContext(),"Unable to login",Toast.LENGTH_LONG).show();
+                        }
+                    });
+                }
+            });
+           // openHome();
             // Signed in successfully, show authenticated UI.
         } catch (ApiException e) {
             Log.d("Error","Login Failed");
