@@ -5,9 +5,9 @@ import java.util.Date;
 public class RegisterCourse_Model {
 
     String userName,email,phone_no,address,collegeName,branch,yearOfGraduation,CourseName,mode;
-    Date startDate, endDate;
+    String startDate, endDate;
 
-    public RegisterCourse_Model(String userName, String email, String phone_no, String address, String collegeName, String branch, String yearOfGraduation, String courseName, String mode, Date startDate, Date endDate) {
+    public RegisterCourse_Model(String userName, String email, String phone_no, String address, String collegeName, String branch, String yearOfGraduation, String courseName, String mode, String startDate, String endDate) {
         this.userName = userName;
         this.email = email;
         this.phone_no = phone_no;
@@ -93,19 +93,19 @@ public class RegisterCourse_Model {
         this.mode = mode;
     }
 
-    public Date getStartDate() {
+    public String getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(Date startDate) {
+    public void setStartDate(String startDate) {
         this.startDate = startDate;
     }
 
-    public Date getEndDate() {
+    public String getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(Date endDate) {
+    public void setEndDate(String endDate) {
         this.endDate = endDate;
     }
 }

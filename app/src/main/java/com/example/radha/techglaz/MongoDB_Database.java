@@ -295,9 +295,9 @@ public class MongoDB_Database {
                 .append("branch",rc_user.getBranch())
                 .append("yearOfGraduation",rc_user.getYearOfGraduation())
                 .append("courseName",rc_user.getCourseName())
-                .append("mode",rc_user.getMode());
-               // .append("StartDate",new BsonDateTime(rc_user.getStartDate().getTime()))
-                //.append("EndDate",new BsonDateTime(rc_user.getEndDate().getTime()));
+                .append("mode",rc_user.getMode())
+                .append("StartDate",rc_user.getStartDate())
+                .append("EndDate",rc_user.getEndDate());
 
         collectionRegisterCourse.insertOne(newRegistration).getAsync(result -> {
             if(result.isSuccess()){

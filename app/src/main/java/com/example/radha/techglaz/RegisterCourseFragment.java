@@ -206,7 +206,7 @@ public class RegisterCourseFragment extends Fragment implements PaymentResultLis
     private RegisterCourse_Model userDetails(){
         RegisterCourse_Model rc_details = new RegisterCourse_Model(name.getText().toString(),email.getText().toString(),phone_no.getText().toString(),
                 address.getText().toString(),collegeName.getText().toString(),branch.getText().toString(),yearOfGraduation.getText().toString(),
-                courseName.getText().toString(),mode,getDate(startDate.getText().toString()),getDate(endDate.getText().toString()));
+                courseName.getText().toString(),mode,startDate.getText().toString(),endDate.getText().toString());
         return rc_details;
     }
 
